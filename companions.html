@@ -45,18 +45,31 @@
         div.sprites>img{width: 800px ;}
         img.sprites{width:20em}
     
-
-       
-        
-        
-        
-        
-
-        
-
-       
-        
     </style>
+    <script>
+        window.smoothScroll = function(target) {
+            var scrollContainer = target;
+            do { //find scroll container
+                scrollContainer = scrollContainer.parentNode;
+                if (!scrollContainer) return;
+                scrollContainer.scrollTop += 1;
+            } while (scrollContainer.scrollTop == 0);
+        
+            var targetY = 0;
+            do { //find the top of target relatively to the container
+                if (target == scrollContainer) break;
+                targetY += target.offsetTop;
+            } while (target = target.offsetParent);
+        
+            scroll = function(c, a, b, i) {
+                i++; if (i > 30) return;
+                c.scrollTop = a + (b - a) / 30 * i;
+                setTimeout(function(){ scroll(c, a, b, i); }, 20);
+            }
+            // start scrolling
+            scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
+        }
+    </script>
 </head>
 <body>
     <header><img src="imagens/BoFII_Logo.webp" alt="">
@@ -71,15 +84,15 @@
    <main>
     <h1>Characters</h1>
     <div class="faces">
-        <img src="imagens/faces/ryu face.png" alt="">
-       <img src="imagens/faces/bow face.png" alt="">
-       <img src="imagens/faces/katt face .png" alt="">
-       <img src="imagens/faces/rand face.png" alt="">
-       <img src="imagens/faces/nina face.png" alt="">
-       <img src="imagens/faces/sten face.png" alt="">
-       <img src="imagens/faces/jean face.png" alt="">
-       <img src="imagens/faces/spar face.png" alt="">
-       <img src="imagens/faces/bleu face.png" alt="">
+       <img onclick="smoothScroll(document.getElementById('ryu'))" src="imagens/faces/ryu face.png" alt="">
+       <img onclick="smoothScroll(document.getElementById('bow'))"src="imagens/faces/bow face.png" alt="">
+       <img onclick="smoothScroll(document.getElementById('katt'))" src="imagens/faces/katt face .png" alt="">
+       <img onclick="smoothScroll(document.getElementById('rand'))" src="imagens/faces/rand face.png" alt="">
+       <img onclick="smoothScroll(document.getElementById('nina'))" src="imagens/faces/nina face.png" alt="">
+       <img onclick="smoothScroll(document.getElementById('sten'))" src="imagens/faces/sten face.png" alt="">
+       <img onclick="smoothScroll(document.getElementById('jean'))" src="imagens/faces/jean face.png" alt="">
+       <img onclick="smoothScroll(document.getElementById('spar'))" src="imagens/faces/spar face.png" alt="">
+       <img onclick="smoothScroll(document.getElementById('bleu'))" src="imagens/faces/bleu face.png" alt="">
        
     </div>
     
@@ -90,7 +103,7 @@
         
     </picture>
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium repellat voluptas nam eaque voluptatum qui rerum. Reiciendis, tempore sunt cumque, ad voluptatum quos similique rem eveniet facilis nobis quas doloribus.lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum incidunt corporis est eum, voluptas ea cumque, iusto pariatur facere recusandae sint! Odit aliquid quam debitis doloribus fugiat! Dicta, inventore aperiam!</p>
-    <p>________________________________________________________________________________________</p>
+    <p id="ryu">________________________________________________________________________________________</p>
     <h1>Ryu </h1>
     <p></p>
     <div>  
@@ -102,8 +115,8 @@
             <p>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt quas odit, ipsam quasi consequuntur voluptas praesentium quia sunt eos nostrum accusantium, ab commodi sapiente iusto, accusamus tenetur minima nulla magnam? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia consectetur corrupti facere minus consequatur deserunt tempore ea ex nihil? Quidem ab error expedita corporis laborum magnam architecto in sit repellendus. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio sint aspernatur ipsam soluta expedita veniam! Excepturi quaerat quibusdam nam dolor ex voluptatibus, eveniet quisquam iusto accusantium corporis tempora dolores explicabo. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error, accusamus. Ducimus modi et ullam nisi dolorem deserunt, placeat saepe porro deleniti quod perspiciatis quaerat sunt quae illum incidunt rem culpa Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus, velit! Totam doloremque laborum necessitatibus fugiat expedita, incidunt, delectus autem vel veniam, a quia laudantium tempora eum voluptates excepturi eaque consectetur? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore aliquam vel veniam sunt quos ipsam consequatur nulla ea quisquam veritatis ex temporibus eius pariatur, natus quaerat ab velit fuga suscipit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, molestiae eaque repellendus praesentium accusamus dignissimos at voluptas? Commodi expedita laboriosam deleniti molestiae voluptatem architecto enim fugiat, provident perferendis quam hic! Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, ab necessitatibus! Reprehenderit voluptate temporibus eum praesentium culpa deserunt saepe, itaque asperiores nostrum nemo perspiciatis, rerum veritatis, ipsam optio similique ullam.</p>
         </div></div>
-    <p>________________________________________________________________________________________</p>
-    <h1>Bow </h1>
+    <p id="bow">________________________________________________________________________________________</p>
+    <h1 >Bow </h1>
     <p></p>
     <div class="char">        
         <div class="int">
@@ -117,7 +130,7 @@
             <p>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt quas odit, ipsam quasi consequuntur voluptas praesentium quia sunt eos nostrum accusantium, ab commodi sapiente iusto, accusamus tenetur minima nulla magnam? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia consectetur corrupti facere minus consequatur deserunt tempore ea ex nihil? Quidem ab error expedita corporis laborum magnam architecto in sit repellendus. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio sint aspernatur ipsam soluta expedita veniam! Excepturi quaerat quibusdam nam dolor ex voluptatibus, eveniet quisquam iusto accusantium corporis tempora dolores explicabo. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error, accusamus. Ducimus modi et ullam nisi dolorem deserunt, placeat saepe porro deleniti quod perspiciatis quaerat sunt quae illum incidunt rem culpa Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus, velit! Totam doloremque laborum necessitatibus fugiat expedita, incidunt, delectus autem vel veniam, a quia laudantium tempora eum voluptates excepturi eaque consectetur? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore aliquam vel veniam sunt quos ipsam consequatur nulla ea quisquam veritatis ex temporibus eius pariatur, natus quaerat ab velit fuga suscipit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, molestiae eaque repellendus praesentium accusamus dignissimos at voluptas? Commodi expedita laboriosam deleniti molestiae voluptatem architecto enim fugiat, provident perferendis quam hic! Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, ab necessitatibus! Reprehenderit voluptate temporibus eum praesentium culpa deserunt saepe, itaque asperiores nostrum nemo perspiciatis, rerum veritatis, ipsam optio similique ullam.</p>
         </div></div>
-    <p>________________________________________________________________________________________</p>
+    <p id="katt">________________________________________________________________________________________</p>
     <h1>Katt</h1>
     <div class="char">        
         
@@ -128,7 +141,7 @@
               <div class="int"><img class="char" src="imagens/katt 3.png" alt=""></div>
             </div>
     </div>
-    <p>________________________________________________________________________________________</p>
+    <p id="rand">________________________________________________________________________________________</p>
     <h1>Rand</h1>
     <div class="char">        
         <div class="int"><img class="char" src="imagens/Rand_29.webp" alt=""></div>
@@ -138,6 +151,7 @@
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt quas odit, ipsam quasi consequuntur voluptas praesentium quia sunt eos nostrum accusantium, ab commodi sapiente iusto, accusamus tenetur minima nulla magnam? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia consectetur corrupti facere minus consequatur deserunt tempore ea ex nihil? Quidem ab error expedita corporis laborum magnam architecto in sit repellendus. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio sint aspernatur ipsam soluta expedita veniam! Excepturi quaerat quibusdam nam dolor ex voluptatibus, eveniet quisquam iusto accusantium corporis tempora dolores explicabo. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error, accusamus. Ducimus modi et ullam nisi dolorem deserunt, placeat saepe porro deleniti quod perspiciatis quaerat sunt quae illum incidunt rem culpa Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus, velit! Totam doloremque laborum necessitatibus fugiat expedita, incidunt, delectus autem vel veniam, a quia laudantium tempora eum voluptates excepturi eaque consectetur? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore aliquam vel veniam sunt quos ipsam consequatur nulla ea quisquam veritatis ex temporibus eius pariatur, natus quaerat ab velit fuga suscipit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, molestiae eaque repellendus praesentium accusamus dignissimos at voluptas? Commodi expedita laboriosam deleniti molestiae voluptatem architecto enim fugiat, provident perferendis quam hic! Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, ab necessitatibus! Reprehenderit voluptate temporibus eum praesentium culpa deserunt saepe, itaque asperiores nostrum nemo perspiciatis, rerum veritatis, ipsam optio similique ullam.</p>
         </div>
     </div>
+    <p id="nina">________________________________________________________________________________________</p>
     <h1>Nina</h1>
     <div class="char">        
         
@@ -148,7 +162,7 @@
               <div class="int"><img class="char" src="imagens/Nina_29.webp" alt=""></div>
             </div>
     </div>
-    <p>________________________________________________________________________________________</p>
+    <p id="sten">________________________________________________________________________________________</p>
     <h1>Sten</h1>
     <div class="char">        
         <div class="int"><img class="char" src="imagens/Sten_29.webp" alt=""></div>
@@ -158,6 +172,7 @@
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt quas odit, ipsam quasi consequuntur voluptas praesentium quia sunt eos nostrum accusantium, ab commodi sapiente iusto, accusamus tenetur minima nulla magnam? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia consectetur corrupti facere minus consequatur deserunt tempore ea ex nihil? Quidem ab error expedita corporis laborum magnam architecto in sit repellendus. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio sint aspernatur ipsam soluta expedita veniam! Excepturi quaerat quibusdam nam dolor ex voluptatibus, eveniet quisquam iusto accusantium corporis tempora dolores explicabo. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error, accusamus. Ducimus modi et ullam nisi dolorem deserunt, placeat saepe porro deleniti quod perspiciatis quaerat sunt quae illum incidunt rem culpa Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus, velit! Totam doloremque laborum necessitatibus fugiat expedita, incidunt, delectus autem vel veniam, a quia laudantium tempora eum voluptates excepturi eaque consectetur? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore aliquam vel veniam sunt quos ipsam consequatur nulla ea quisquam veritatis ex temporibus eius pariatur, natus quaerat ab velit fuga suscipit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, molestiae eaque repellendus praesentium accusamus dignissimos at voluptas? Commodi expedita laboriosam deleniti molestiae voluptatem architecto enim fugiat, provident perferendis quam hic! Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, ab necessitatibus! Reprehenderit voluptate temporibus eum praesentium culpa deserunt saepe, itaque asperiores nostrum nemo perspiciatis, rerum veritatis, ipsam optio similique ullam.</p>
         </div>
     </div>
+    <p id="jean">________________________________________________________________________________________</p>
     <h1>Jean</h1>
     <div class="char">        
         
@@ -168,7 +183,7 @@
               <div class="int"><img class="char" class="katt" src="imagens/Jean_29.webp" alt=""></div>
             </div>
     </div>
-    <p>________________________________________________________________________________________</p>
+    <p id="spar">________________________________________________________________________________________</p>
     <h1>Spar</h1>
     <div class="char">        
         <div class="int"><img class="char" src="imagens/Spar_29.webp" alt=""></div>
@@ -178,6 +193,7 @@
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt quas odit, ipsam quasi consequuntur voluptas praesentium quia sunt eos nostrum accusantium, ab commodi sapiente iusto, accusamus tenetur minima nulla magnam? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia consectetur corrupti facere minus consequatur deserunt tempore ea ex nihil? Quidem ab error expedita corporis laborum magnam architecto in sit repellendus. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio sint aspernatur ipsam soluta expedita veniam! Excepturi quaerat quibusdam nam dolor ex voluptatibus, eveniet quisquam iusto accusantium corporis tempora dolores explicabo. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error, accusamus. Ducimus modi et ullam nisi dolorem deserunt, placeat saepe porro deleniti quod perspiciatis quaerat sunt quae illum incidunt rem culpa Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus, velit! Totam doloremque laborum necessitatibus fugiat expedita, incidunt, delectus autem vel veniam, a quia laudantium tempora eum voluptates excepturi eaque consectetur? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore aliquam vel veniam sunt quos ipsam consequatur nulla ea quisquam veritatis ex temporibus eius pariatur, natus quaerat ab velit fuga suscipit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, molestiae eaque repellendus praesentium accusamus dignissimos at voluptas? Commodi expedita laboriosam deleniti molestiae voluptatem architecto enim fugiat, provident perferendis quam hic! Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, ab necessitatibus! Reprehenderit voluptate temporibus eum praesentium culpa deserunt saepe, itaque asperiores nostrum nemo perspiciatis, rerum veritatis, ipsam optio similique ullam.</p>
         </div>
     </div>
+    <p id="bleu">________________________________________________________________________________________</p>
     <h1>Bleu</h1>
     <div class="char">        
         
